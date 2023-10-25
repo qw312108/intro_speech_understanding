@@ -41,7 +41,7 @@ def my_average(input_list):
             count += 1
 
     if count == 0:
-        raise ValueError("输入列表中没有有效的数字元素")
+        raise ValueError("error")
 
     average = total / count
     return average
