@@ -2,6 +2,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def center_of_gravity(x):
+    
+    n = len(x) - 1
+    indices = np.arange(n + 1)
+    numerator = np.dot(indices, x)
+    denominator = np.sum(x)
+    c = numerator / denominator
+    return c
+
     '''
     Find the center of gravity of a vector, x.
     If x=[x0,x1,...,xn], then you should return
@@ -20,6 +28,9 @@ def center_of_gravity(x):
     return c
 
 def matched_identity(x):
+    n = len(x)
+    I = np.eye(n)
+    return I
     '''
     Create an identity matrix that has the same number of rows as x has elements.
     Hint: use len(x), and use np.eye.
@@ -49,8 +60,8 @@ def sine_and_cosine(t_start, t_end, t_steps):
     y (array of length t_steps): sin(t)
     '''
     # change these lines
-    t = 0 
-    x = 0
-    y = 0
+    t = np.linspace(t_start, t_end, t_steps)
+    x = np.cos(t)
+    y = np.sin(t)
     # end changes here
     return t, x, y
